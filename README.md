@@ -41,7 +41,31 @@ command: md 'folderName'
 ##### - delete a folder:
 command: rm 'path'\'folderName'
 
+> ssh configuration:
 
+##### - configure ssh key in powershell:
+command:        cd path-to-Git/bin (for me : cd C:\Apps\Git\bin)
+                bash
+                exec ssh-agent bash
+                ssh-add MYKEY (~(user directory) works in bash but not in powershell)
+                exit (for exiting from bash)
+
+
+## Mac terminal:
+> File and Directory operation:
+
+##### - edit a file (vi):
+command: vi filepath
+option: i (insert); 
+        a (append from current position
+        A append from EOL
+        :q quit
+        :wq quit and save
+        :wq! quit and save
+
+##### - delete a file and folder:
+command: rm -rf <folder-name> (for folder)
+command: rm <file-name> (for files)
 
 
 ## windows run shortcuts:
@@ -57,7 +81,14 @@ command: sysdm.cpl
 
 ## git:
 
+##### - clone:
+command: git clone <http>|<ssh>
 
+##### - branch:
+command: git branch -a (check all the branchs both remote and local)
+
+##### - checkout:
+command: git checkout <branch-name>
 
 
 
@@ -74,6 +105,9 @@ command: npm -v | node -v
 ##### - initialize npm:
 command: npm init
 
+##### - uninstall everything not listed in package.json:
+command: npm prune
+
 ##### - adding dependencies:
 command: npm install 'package-name' -save
 
@@ -82,3 +116,14 @@ command: npm i 'package-name' --save-dev
 
 ##### - adding dependencies:
 command: npm i -g 'package-name'
+
+##### - npm configuration:
+command: npm config set <key><value>
+command: npm config get <key>
+example: npm config get registry
+command: npm config delete <key>
+command: npm config list [--json] | npm config ls -l
+command: npm config edit
+command: npm set <key><value>
+command: npm get <key>
+example: npm get registry
